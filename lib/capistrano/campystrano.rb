@@ -14,7 +14,7 @@ module Capistrano
           _cset(:campy_application)                { fetch(:application) }
           _cset(:campy_app_env)                    { fetch(:rails_env) }
           _cset(:campy_branch)                     { fetch(:branch) rescue '' }
-          _cset(:campy_emoji)                      { (fetch(:campfire_emoji) rescue ':sparkles:') }
+          _cset(:campy_emoji)                      { fetch(:campfire_emoji) rescue ':sparkles:' }
           _cset(:campfire_settings)                { raise 'Campfire Settings are required' }
           _cset(:campfire) do
             options = fetch(:campfire_settings)
