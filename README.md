@@ -15,7 +15,7 @@ gem 'campystrano', :git => 'git@github.com:lumoslabs/campystrano.git'
 
 In your `config/deploy.rb` file
   1. ```require 'capistrano/campystrano'```
-  2. ```set :campfire_settings, { your code here }```
+  2. ```set :campfire_settings { your code here }```
 
 The ```:campfire_settings``` variable must be defined as a hash containing your Campfire account credentials. The ```:subdomain``` and ```:room``` are required. You must also set either a ```:token``` or a ```:username```/```:password``` pair.
 
