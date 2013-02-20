@@ -33,4 +33,3 @@ Configuration
 You can configure the emoji that bookends your deploy messages by adding the following to `config/deploy.rb`
 ```
 set: campfire_emoji, ':neckbeard:'
-```
