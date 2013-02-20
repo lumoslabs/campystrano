@@ -14,11 +14,11 @@ module Capistrano
           _cset(:campy_application)                { fetch(:application) }
           _cset(:campy_app_env)                    { fetch(:rails_env) }
           _cset(:campy_branch)                     { fetch(:branch) rescue '' }
+          _cset(:campfire_settings)                { raise 'Campfire Settings are required' }
           _cset(:campfire) do
-            options = symbolize_keys!(YAML.load_file(fetch(:campy_config_file)))
+            options = fetch(:campfire_settings)
             subdomain = options.delete(:subdomain)
             room = options.delete(:room)
-
 
             campfire = Tinder::Campfire.new(subdomain, options)
             campfire.find_room_by_name(room)
@@ -30,13 +30,6 @@ module Capistrano
 
         def speak_to_campfire(msg)
           campfire.speak ":sparkles:#{msg}:sparkles:"
-        end
-
-        def symbolize_keys!(hash)
-          hash.keys.each do |key|
-            hash[(key.to_sym rescue key) || key] = hash.delete(key)
-          end
-          hash
         end
 
         namespace :deploy do
