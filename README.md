@@ -13,19 +13,16 @@ Add the following to your Gemfile:
 gem 'campystrano', :git => 'git@github.com:lumoslabs/campystrano.git'
 ```
 
-In your `config/deploy.rb` file
-  1. ```require 'capistrano/campystrano'```
-  2. ```set :campfire_settings { your code here }```
-
-The ```:campfire_settings``` variable must be defined as a hash containing your Campfire account credentials. The ```:subdomain``` and ```:room``` are required. You must also set either a ```:token``` or a ```:username```/```:password``` pair.
-
-For example:
+In your `config/deploy.rb` file, add the following:
 ```
-set :campfire_settings do
-  {
-    subdomain: mysubdomain,
-    room: myroom,
-    token: abcde1234567890fghijk
-  }
-end
+  require 'capistrano/campystrano'
+  set :campfire_settings do
+    {
+      subdomain: mysubdomain,
+      room: myroom,
+      token: ENV['CAMPFIRE_TOKEN']
+    }
+  end
 ```
+
+The ```:campfire_settings``` block must return a hash containing your Campfire account credentials. The ```:subdomain``` and ```:room``` are required. You must also set either a ```:token``` or a ```:username```/```:password``` pair.
