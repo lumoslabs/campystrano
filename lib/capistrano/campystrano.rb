@@ -13,11 +13,9 @@ module Capistrano
         before(TASKS.values) do
           _cset(:campy_application)                { fetch(:application) }
           _cset(:campy_app_env)                    { fetch(:rails_env) }
-          _cset(:campy_branch)                     { fetch(:branch) }
+          _cset(:campy_branch)                     { fetch(:branch) rescue '' }
           _cset(:campfire) do
             options = symbolize_keys!(YAML.load_file(fetch(:campy_config_file)))
-            puts options.inspect
-            puts '========================================'
             subdomain = options.delete(:subdomain)
             room = options.delete(:room)
 
