@@ -5,6 +5,7 @@ set :application, "Campystrano Dummy App"
 set :repository,  "set your repository location here"
 set :branch, 'next_deploy'
 
+# set :campfire_emoji, ':neckbeard:'
 set :campfire_settings do
   config_file = File.expand_path(File.join(File.dirname(__FILE__), 'campystrano.yml'))
   YAML.load_file(config_file).symbolize_keys
