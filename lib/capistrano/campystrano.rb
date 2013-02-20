@@ -14,7 +14,7 @@ module Capistrano
           _cset(:campy_application)                { fetch(:application) }
           _cset(:campy_app_env)                    { fetch(:rails_env) }
           _cset(:campy_branch)                     { fetch(:branch) rescue '' }
-          _cset(:campfire_options)                 { raise 'Campfire Settings are required' }
+          _cset(:campfire_settings)                { raise 'Campfire Settings are required' }
           _cset(:campfire) do
             options = fetch(:campfire_settings)
             subdomain = options.delete(:subdomain)
