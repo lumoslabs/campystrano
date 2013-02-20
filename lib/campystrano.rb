@@ -1,2 +1,2 @@
-module Campystrano
-end
+require 'capistrano'
+require 'capistrano/campystrano'
