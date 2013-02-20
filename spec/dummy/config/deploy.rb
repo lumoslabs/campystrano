@@ -1,9 +1,14 @@
+require 'active_support/core_ext/hash/keys'
 require 'campystrano'
 
 set :application, "Campystrano Dummy App"
 set :repository,  "set your repository location here"
 set :branch, 'next_deploy'
-set :campy_config_file, File.expand_path(File.join(File.dirname(__FILE__), 'campystrano.yml'))
+
+set :campfire_settings do
+  config_file = File.expand_path(File.join(File.dirname(__FILE__), 'campystrano.yml'))
+  YAML.load_file(config_file).symbolize_keys
+end
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
