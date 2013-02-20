@@ -26,3 +26,11 @@ In your `config/deploy.rb` file, add the following:
 ```
 
 The ```:campfire_settings``` block must return a hash containing your Campfire account credentials. The ```:subdomain``` and ```:room``` are required. You must also set either a ```:token``` or a ```:username```/```:password``` pair.
+
+Configuration
+-------------
+
+You can configure the emoji that bookends your deploy messages by adding the following to `config/deploy.rb`
+```
+set: campfire_emoji, ':neckbeard:'
+```
