@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "TODO: Summary of Campystrano."
   s.description = "TODO: Description of Campystrano."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "capistrano",  "~> 2.14.2"
   s.add_dependency "tinder",      "~> 1.9.2"
