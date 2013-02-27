@@ -27,7 +27,7 @@ module Capistrano
         end
 
         before 'deploy', TASKS[:start]
-        after  'deploy', TASKS[:finish]
+        after  'deploy', TASKS[:success]
 
         def speak_to_campfire(msg)
           campfire.speak "#{campy_emoji}#{msg}#{campy_emoji}"
