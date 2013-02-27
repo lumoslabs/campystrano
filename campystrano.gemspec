@@ -9,9 +9,8 @@ Gem::Specification.new do |s|
   s.version     = Campystrano::VERSION
   s.authors     = ["Chris Friedrich"]
   s.email       = ["cfriedrich@lumoslabs.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Campystrano."
-  s.description = "TODO: Description of Campystrano."
+  s.homepage    = "https://github.com/lumoslabs/campystrano"
+  s.summary     = "Adds before and after deploy hooks that announce a deploy's start and success in a Campfire room."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
