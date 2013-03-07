@@ -4,7 +4,9 @@ module Capistrano
   module Campystrano
     TASKS = {
       start: 'deploy:campystrano:start',
-      success: 'deploy:campystrano:success'
+      success: 'deploy:campystrano:success',
+      failure: 'deploy:campystrano:failure',
+      rollback: 'deploy:campystrano:rollback'
     }
 
     def self.load_into(configuration)
@@ -27,8 +29,10 @@ module Capistrano
           end
         end
 
-        before 'deploy', TASKS[:start]
-        after  'deploy', TASKS[:success]
+        before 'deploy',          TASKS[:start]
+        after  'deploy',          TASKS[:success]
+        before 'deploy:rollback', TASKS[:failure]
+        after  'deploy:rollback', TASKS[:rollback]
 
         def speak_to_campfire(msg)
           campfire.speak "#{campy_emoji}#{msg}#{campy_emoji}"
@@ -44,6 +48,16 @@ module Capistrano
             desc 'Report deploy success to campfire'
             task 'success' do
               speak_to_campfire("Deploy to #{campy_application} #{campy_app_env} finished successfully")
+            end
+
+            desc 'Report deploy failure to campfire'
+            task 'failure' do
+              speak_to_campfire("Deploy to #{campy_application} #{campy_app_env} failed. Rolling back...")
+            end
+
+            desc 'Report deploy rollback to campfire'
+            task 'rollback' do
+              speak_to_campfire("Deploy to #{campy_application} #{campy_app_env} rolled back")
             end
           end
         end

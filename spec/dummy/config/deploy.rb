@@ -3,7 +3,7 @@ require 'campystrano'
 
 set :application, "Campystrano Dummy App"
 set :repository,  "set your repository location here"
-set :branch, 'next_deploy'
+set :branch, 'master'
 
 # set :campfire_emoji, ':neckbeard:'
 set :campfire_settings do
