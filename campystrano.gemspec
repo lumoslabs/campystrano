@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/lumoslabs/campystrano"
   s.summary     = "Adds before and after deploy hooks that announce a deploy's start and success in a Campfire room."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files       = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.test_files  = Dir.glob("{spec,test}/**/*.rb")
 
   s.add_dependency "capistrano",  ">= 2.9"
   s.add_dependency "tinder",      ">= 1.9.2"
