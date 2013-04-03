@@ -20,4 +20,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rails",       "~> 3.2.12"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "capistrano-spec"
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'pry-nav'
+  s.add_development_dependency 'pry-rescue'
+  s.add_development_dependency 'pry-stack_explorer'
+  s.add_development_dependency 'ruby-debug19'
 end
