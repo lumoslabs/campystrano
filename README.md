@@ -10,7 +10,7 @@ Installation
 
 Add the following to your Gemfile:
 ```
-gem 'campystrano', :git => 'git@github.com:lumoslabs/campystrano.git'
+gem 'campystrano'
 ```
 
 In your `config/deploy.rb` file, add the following:
