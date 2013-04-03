@@ -9,7 +9,7 @@ class Capistrano::Configuration
   end
 end
 
-describe Capistrano::Campystrano do
+describe Campystrano do
   let(:user) { 'glen_morangie' }
   let(:application) { 'my_app' }
   let(:rails_env) { Rails.env.to_s }
@@ -33,7 +33,7 @@ describe Capistrano::Campystrano do
       Tinder::Campfire.stub(:new).and_return(campfire)
       c.stub(:`).with('whoami').and_return(user)
 
-      Capistrano::Campystrano.load_into(c)
+      Campystrano.load_into(c)
     end
   end
 
