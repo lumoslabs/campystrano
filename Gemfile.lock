@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    campystrano (0.0.2)
+    campystrano (0.0.3)
       capistrano (>= 2.9)
       tinder (>= 1.9.2)
 
