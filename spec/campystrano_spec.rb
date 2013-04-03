@@ -39,7 +39,7 @@ describe Capistrano::Campystrano do
 
   subject { config.find_and_execute_task(task) }
 
-  shared_examples_for 'a campystrano deploy task' do |message|
+  shared_examples_for 'a campystrano deploy task' do
     context 'configuration' do
       it 'defines the application' do
         subject
