@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lumoslabs/campystrano.png)](https://travis-ci.org/lumoslabs/campystrano)
+
 Campystrano
 ===========
 
