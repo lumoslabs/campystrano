@@ -5,8 +5,6 @@ before_install: mkdir -p spec/dummy/db
 rvm:
   - 1.9.3
   - 1.9.2
-  - rbx-19mode
-  - ruby-head
 
 notifications:
   email: false
