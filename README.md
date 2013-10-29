@@ -17,7 +17,7 @@ gem 'campystrano'
 
 In your `config/deploy.rb` file, add the following:
 ```
-  require 'capistrano/campystrano'
+  require 'campystrano'
   set :campfire_settings do
     {
       subdomain: mysubdomain,
